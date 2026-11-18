@@ -1,0 +1,12 @@
+================================================================================
+ Trail Guide Agent - Evaluation FAILED
+================================================================================
+
+Error: Error code: 400 - {'error': {'code': 'UserError', 'severity': None, 'message': 'Evaluation validation failed: model resources are not found (3).', 'messageFormat': 'Evaluation validation failed: {errors}', 'messageParameters': {'errors': 'model resources are not found (3).'}, 'referenceCode': None, 'detailsUri': 'https://aka.ms/FoundryEvalsFormatIssues', 'target': 'testing_criteria', 'details': [{'code': 'ResourceNotFound', 'severity': None, 'message': "Model 'gpt-5' was not found. Verify the name and version are correct.", 'messageFormat': None, 'messageParameters': {}, 'referenceCode': None, 'detailsUri': None, 'target': 'evaluation.testing_criteria[0].initialization_parameters.deployment_name', 'details': [], 'innerError': None, 'debugInfo': None, 'additionalInfo': None}, {'code': 'ResourceNotFound', 'severity': None, 'message': "Model 'gpt-5' was not found. Verify the name and version are correct.", 'messageFormat': None, 'messageParameters': {}, 'referenceCode': None, 'detailsUri': None, 'target': 'evaluation.testing_criteria[1].initialization_parameters.deployment_name', 'details': [], 'innerError': None, 'debugInfo': None, 'additionalInfo': None}, {'code': 'ResourceNotFound', 'severity': None, 'message': "Model 'gpt-5' was not found. Verify the name and version are correct.", 'messageFormat': None, 'messageParameters': {}, 'referenceCode': None, 'detailsUri': None, 'target': 'evaluation.testing_criteria[2].initialization_parameters.deployment_name', 'details': [], 'innerError': None, 'debugInfo': None, 'additionalInfo': None}], 'innerError': {'code': 'EvalValidationFailed', 'innerError': None}, 'debugInfo': None, 'additionalInfo': None}, 'correlation': {'operation': '40fa9a1d37a041d6a7ad75bcb908d780', 'request': '4f5c094ef241ba20'}, 'environment': 'swedencentral', 'location': 'swedencentral', 'time': '2026-11-18T11:45:47.5393211+00:00', 'componentName': 'raisvc', 'statusCode': 400}
+
+Troubleshooting:
+  - Verify AZURE_AI_PROJECT_ENDPOINT in .env file
+  - Check Azure credentials: az login
+  - Ensure GPT-5.1 model is deployed and accessible
+  - Ensure the caller has Foundry User access at the AI account scope
+  - If you just ran azd up, wait 1-2 minutes for role propagation and retry once
